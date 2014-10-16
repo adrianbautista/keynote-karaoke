@@ -1,0 +1,11 @@
+<h1>presentation</h1>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+<script>
+  var socket = io();
+  socket.on('slideChange', function(msg) {
+    console.log('slide changed');
+  });
+</script>

@@ -1,0 +1,15 @@
+<h1>what up</h1>
+<button>click me</button>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+<script>
+  var socket = io();
+  $('button').on('click', function(e) {
+    e.preventDefault();
+    socket.emit('slideChange', {});
+    console.log('message sent');
+  });
+</script>
+

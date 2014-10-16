@@ -1,0 +1,12 @@
+{
+  "name": "keynote-karaoke",
+  "version": "0.0.1",
+  "description": "improve your presentation skills",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.9.7",
+    "logfmt": "^1.2.0",
+    "path": "^0.4.9",
+    "socket.io": "^1.1.0"
+  }
+}
