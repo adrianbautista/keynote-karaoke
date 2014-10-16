@@ -26,8 +26,21 @@ body {
 }
 
 .remote-button {
+  font-size: 3em;
+  height: 250px;
   margin: 75px auto;
   padding: 15px 50px;
+  position: relative;
+  width: 250px;
+}
+
+.remote-button span {
+  display: block;
+  height: 50px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .slide-prompt {
