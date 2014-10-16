@@ -1,11 +1,17 @@
 var express = require('express');
 var path = require('path');
-var logfmt = require("logfmt");
-var app = express();
+var logfmt = require('logfmt');
+var fs = require('fs');
+var _und = require('underscore');
 
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = Number(process.env.PORT || 3000);
+
+var slideImages = fs.readdirSync(path.join(__dirname, '/public/img')).map(function(imagePath) {
+  return '/img/' + imagePath;
+});
 
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(logfmt.requestLogger());
@@ -22,7 +28,11 @@ app.get('/remote', function(req, res) {
 });
 
 app.get('/presentation', function(req, res) {
-  res.render('presentation', { title: 'Presentation | Keynote Karaoke' });
+  var presentationImages = _und.sample(slideImages, 4);
+  res.render('presentation', {
+    title: 'Presentation | Keynote Karaoke',
+    slides: presentationImages
+  });
 });
 
 io.on('connection', function(socket) {
