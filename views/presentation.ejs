@@ -1,5 +1,9 @@
 <% include header %>
 
+<h1 class='slide-prompt'>
+  <%= slidesPrompt %>
+</h1>
+
 <script>
   var slides = "<%= slides %>".split(',');
   var socket = io();
@@ -7,6 +11,8 @@
   socket.on('slideChange', function(msg) {
     var currentImage = slides.pop();
     if (currentImage) {
+      $('.slide-prompt').remove();
+
       $('html').css({
         'background': ('url(' + currentImage + ') no-repeat center center fixed'),
         'background-size': 'cover'

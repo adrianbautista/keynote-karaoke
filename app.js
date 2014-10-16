@@ -13,6 +13,13 @@ var slideImages = fs.readdirSync(path.join(__dirname, '/public/img')).map(functi
   return '/img/' + imagePath;
 });
 
+var prompts = [
+  "You're about to announce massive layoffs.",
+  "The company is about to release a brand new product.",
+  "The business was just acquired by Google.",
+  "You're announcing a new company policy to freeze female employee embryos."
+]
+
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(logfmt.requestLogger());
 
@@ -29,8 +36,11 @@ app.get('/remote', function(req, res) {
 
 app.get('/presentation', function(req, res) {
   var presentationImages = _und.sample(slideImages, 4);
+  var presentationPrompt = _und.sample(prompts, 1);
+
   res.render('presentation', {
     title: 'Presentation | Keynote Karaoke',
+    slidesPrompt: presentationPrompt,
     slides: presentationImages
   });
 });
