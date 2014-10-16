@@ -35,10 +35,6 @@ body {
   width: 200px;
 }
 
-.remote-button:hover {
-  background: #111111;
-}
-
 .remote-button span {
   display: block;
   height: 50px;
@@ -46,6 +42,12 @@ body {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.new-presentation-button {
+  display: none;
+  margin: 25px auto;
+  text-align: center;
 }
 
 .slide-prompt {

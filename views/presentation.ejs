@@ -4,6 +4,8 @@
   <h1 class='slide-prompt'>
     <%= slidesPrompt %>
   </h1>
+
+  <a href='/presentation' class='new-presentation-button button'>New Presentation</a>
 </div>
 
 <script>
@@ -22,6 +24,7 @@
     } else {
       $('.slide-prompt').text('Any Questions?');
       $('html').css({ background: '#FFF' });
+      $('.new-presentation-button').css({ display: 'block' });
       $('.container').show();
     }
   });
