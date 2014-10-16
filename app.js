@@ -9,9 +9,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = Number(process.env.PORT || 3000);
 
-var slideImages = fs.readdirSync(path.join(__dirname, '/public/img')).map(function(imagePath) {
-  return '/img/' + imagePath;
-});
+var slideImages = fs.readdirSync(path.join(__dirname, '/public/img/slide-images'));
 
 var prompts = [
   "You're about to announce massive layoffs.",

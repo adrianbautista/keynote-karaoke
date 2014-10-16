@@ -1,0 +1,15 @@
+<% include header %>
+
+<a href='#' class='remote-button'>Next Slide</a>
+
+
+<script>
+  var socket = io();
+  $('.remote-button').on('click', function(e) {
+    e.preventDefault();
+    socket.emit('slideChange', {});
+    console.log('slide changed');
+  });
+</script>
+
+<% include footer %>

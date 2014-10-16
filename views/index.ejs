@@ -1,18 +1,19 @@
 <% include header %>
 
-<h1>what up</h1>
-<button>click me</button>
+<h1>Keynote Karaoke</h1>
 
-<script src="/socket.io/socket.io.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<h2>How does it work?</h2>
 
-<script>
-  var socket = io();
-  $('button').on('click', function(e) {
-    e.preventDefault();
-    socket.emit('slideChange', {});
-    console.log('message sent');
-  });
-</script>
+<p>
+
+</p>
+
+<h2>The Remote</h2>
+
+<p>
+  Scan the following code or click this <a href='/remote'>link</a> to access the presentation remote used to change slides.
+</p>
+
+<img src='/img/qrcode.png'> 
 
 <% include footer %>
