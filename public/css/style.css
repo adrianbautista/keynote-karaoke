@@ -1,6 +1,36 @@
-/* html { */
-/*   -webkit-background-size: cover; */
-/*   -moz-background-size: cover; */
-/*   -o-background-size: cover; */
-/*   background-size: cover; */
-/* } */
+body {
+  color: #111111;
+}
+
+.container {
+  margin: 75px auto;
+  max-width: 450px;
+  padding: 0 50px;
+}
+
+.button {
+  background: #111111;
+  color: #FFF;
+  display: block;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+}
+
+.button:hover {
+  background: #FF4136;
+}
+
+.remote-button {
+  margin: 75px auto;
+  padding: 15px 50px;
+}
+
+.slide-prompt {
+  text-align: center;
+}
+

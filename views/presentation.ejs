@@ -1,8 +1,10 @@
 <% include header %>
 
-<h1 class='slide-prompt'>
-  <%= slidesPrompt %>
-</h1>
+<div class='container'>
+  <h1 class='slide-prompt'>
+    <%= slidesPrompt %>
+  </h1>
+</div>
 
 <script>
   var slides = "<%= slides %>".split(',');
@@ -11,7 +13,7 @@
   socket.on('slideChange', function(msg) {
     var currentImage = slides.pop();
     if (currentImage) {
-      $('.slide-prompt').hide();
+      $('.container').hide();
 
       $('html').css({
         'background': ('url(/img/slide-images/' + currentImage + ') no-repeat center center fixed'),
@@ -20,7 +22,7 @@
     } else {
       $('.slide-prompt').text('Any Questions?');
       $('html').css({ background: '#FFF' });
-      $('.slide-prompt').show();
+      $('.container').show();
     }
   });
 </script>
