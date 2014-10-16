@@ -21,7 +21,7 @@ body {
   width: 200px;
 }
 
-.button:hover, .button:active {
+.button:hover, .button:focus, .button:active {
   background: #FF4136;
 }
 
@@ -32,6 +32,10 @@ body {
   padding: 15px 50px;
   position: relative;
   width: 200px;
+}
+
+.remote-button:hover {
+  background: #111111;
 }
 
 .remote-button span {
