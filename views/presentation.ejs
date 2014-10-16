@@ -11,14 +11,16 @@
   socket.on('slideChange', function(msg) {
     var currentImage = slides.pop();
     if (currentImage) {
-      $('.slide-prompt').remove();
+      $('.slide-prompt').hide();
 
       $('html').css({
         'background': ('url(' + currentImage + ') no-repeat center center fixed'),
         'background-size': 'cover'
       });
     } else {
+      $('.slide-prompt').text('Any Questions?');
       $('html').css({ background: '#FFF' });
+      $('.slide-prompt').show();
     }
   });
 </script>
