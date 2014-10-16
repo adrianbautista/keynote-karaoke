@@ -1,15 +1,19 @@
 <% include header %>
 
-<h1>presentation</h1>
-
-<% slides.forEach(function(slide) { %>
-  <img src="<%= slide %>">
-<% }); %>
-
 <script>
+  var slides = "<%= slides %>".split(',');
   var socket = io();
+
   socket.on('slideChange', function(msg) {
-    console.log('slide changed');
+    var currentImage = slides.pop();
+    if (currentImage) {
+      $('html').css({
+        'background': ('url(' + currentImage + ') no-repeat center center fixed'),
+        'background-size': 'cover'
+      });
+    } else {
+      $('html').css({ background: '#FFF' });
+    }
   });
 </script>
 
