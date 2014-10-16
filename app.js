@@ -7,22 +7,22 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = Number(process.env.PORT || 3000);
 
-app.use(express.static(path.join(__dirname + 'public')));
+app.use(express.static(path.join(__dirname + '/public')));
 app.use(logfmt.requestLogger());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  res.render('index', {});
+  res.render('index', { title: 'Keynote Karaoke' });
 });
 
 app.get('/remote', function(req, res) {
-  res.render('remote', {});
+  res.render('remote', { title: 'Remote | Keynote Karaoke' });
 });
 
 app.get('/presentation', function(req, res) {
-  res.render('presentation', {});
+  res.render('presentation', { title: 'Presentation | Keynote Karaoke' });
 });
 
 io.on('connection', function(socket) {
