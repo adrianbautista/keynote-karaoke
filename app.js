@@ -12,11 +12,11 @@ var port = Number(process.env.PORT || 3000);
 var slideImages = fs.readdirSync(path.join(__dirname, '/public/img/slide-images'));
 
 var prompts = [
-  "You're about to announce massive layoffs.",
-  "The company is about to release a brand new product.",
+  "The company is announcing massive layoffs.",
+  "The company is releasing a brand new product.",
   "The business was just acquired by Google.",
-  "You're announcing a new company policy to freeze female employee embryos."
-]
+  "There is a new company policy to freeze female employee embryos."
+];
 
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(logfmt.requestLogger());
