@@ -18,7 +18,7 @@ var prompts = [
   "There is a new company policy to freeze female employee embryos."
 ];
 
-app.use(express.static(path.join(__dirname + '/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(logfmt.requestLogger());
 
 app.set('views', path.join(__dirname, 'views'));
